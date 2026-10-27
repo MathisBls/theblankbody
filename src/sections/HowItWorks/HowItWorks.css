@@ -1,0 +1,167 @@
+.how-it-works {
+  padding-block: var(--space-24);
+  background:
+    radial-gradient(circle at 0.0625rem 0.0625rem, var(--color-beige-dark) 0.09rem, transparent 0) 0 0 / 1.25rem 1.25rem,
+    var(--color-beige);
+}
+
+.how-it-works__heading {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  max-width: 44rem;
+  margin: 0 auto var(--space-16);
+  text-align: center;
+}
+
+.how-it-works .how-it-works__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-navy);
+}
+
+.how-it-works__eyebrow::before {
+  content: '';
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--color-orange);
+  border: 0.125rem solid var(--color-outline);
+}
+
+.how-it-works__title {
+  font-size: var(--text-2xl);
+  text-wrap: balance;
+}
+
+.how-it-works__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: var(--outline);
+  border-radius: var(--radius-card);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-comic);
+  rotate: -1deg;
+  transition:
+    rotate var(--duration-base) var(--ease-spring),
+    translate var(--duration-base) var(--ease-spring),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.how-step:nth-child(even) {
+  rotate: 1.2deg;
+}
+
+.how-step:hover {
+  rotate: 0deg;
+  translate: 0 -0.375rem;
+  box-shadow: 0.5rem 0.75rem 0 var(--color-outline);
+}
+
+.how-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--space-8));
+  width: var(--space-8);
+  border-top: 0.1875rem dashed var(--color-navy);
+}
+
+.how-step__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.how-step__pill {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.how-step__icon {
+  display: grid;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border: var(--outline);
+  border-radius: 1rem;
+  background: var(--color-beige);
+  box-shadow: var(--shadow-comic-small);
+  rotate: 6deg;
+  color: var(--color-outline);
+}
+
+.how-step--navy {
+  --step-icon-accent: var(--color-navy);
+}
+
+.how-step--orange {
+  --step-icon-accent: var(--color-orange);
+}
+
+.how-step--green {
+  --step-icon-accent: var(--color-green);
+}
+
+.step-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  overflow: visible;
+}
+
+.step-icon__fill-page {
+  fill: var(--color-cream);
+}
+
+.step-icon__fill-accent {
+  fill: var(--step-icon-accent);
+}
+
+.how-step__title {
+  font-size: var(--text-xl);
+}
+
+.how-step__text {
+  color: var(--color-ink);
+}
+
+@media (max-width: 51.99rem) {
+  .how-it-works__steps {
+    grid-template-columns: minmax(0, 30rem);
+    justify-content: center;
+  }
+
+  .how-step:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: calc(-1 * var(--space-8));
+    left: 50%;
+    width: 0;
+    height: var(--space-8);
+    border-top: 0;
+    border-left: 0.1875rem dashed var(--color-navy);
+  }
+}

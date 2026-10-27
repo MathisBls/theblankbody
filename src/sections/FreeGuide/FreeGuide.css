@@ -1,0 +1,210 @@
+.free-guide {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-24);
+  background: var(--color-navy);
+  color: var(--color-cream);
+}
+
+.free-guide::before {
+  content: '';
+  position: absolute;
+  inset: auto -10% -40% 30%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-orange) 18%, transparent), transparent);
+  pointer-events: none;
+}
+
+.free-guide__layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+}
+
+.free-guide__visual {
+  position: relative;
+}
+
+.free-guide__mockup {
+  position: relative;
+  width: min(100%, 34rem);
+  aspect-ratio: 3 / 2.3;
+  margin-inline: auto;
+  perspective: 90rem;
+  will-change: transform;
+}
+
+.free-guide__sheet {
+  position: absolute;
+  top: 6%;
+  width: 52%;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+  box-shadow:
+    0 1.5rem 3rem rgb(0 0 0 / 0.35),
+    0 0.25rem 0.75rem rgb(0 0 0 / 0.2);
+}
+
+.free-guide__sheet--cover {
+  left: 8%;
+  height: auto;
+  transform: rotateY(14deg) rotateZ(-4deg);
+  transform-origin: left center;
+}
+
+.free-guide__sheet--page {
+  right: 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  padding: 9% 8%;
+  background: var(--color-beige);
+  transform: rotateY(-10deg) rotateZ(6deg) translateY(6%);
+}
+
+.free-guide__page-title,
+.free-guide__page-line,
+.free-guide__page-box,
+.free-guide__page-card {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+.free-guide__page-title {
+  width: 70%;
+  height: 7%;
+  background: var(--color-navy);
+}
+
+.free-guide__page-line {
+  height: 2.5%;
+  background: var(--color-beige-dark);
+}
+
+.free-guide__page-line--short {
+  width: 60%;
+}
+
+.free-guide__page-box {
+  height: 14%;
+  border: 0.125rem dashed var(--color-navy);
+  border-radius: 0.5rem;
+  background: var(--color-cream);
+}
+
+.free-guide__page-card {
+  height: 16%;
+  border: 0.125rem solid var(--color-navy);
+  border-radius: 0.6rem;
+  background: var(--color-cream);
+}
+
+.free-guide__content {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+}
+
+.free-guide__title {
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  text-wrap: balance;
+}
+
+.free-guide__lead {
+  font-size: var(--text-lg);
+  color: var(--color-beige);
+}
+
+.free-guide__bullets {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  margin: var(--space-2) 0;
+  padding: var(--space-4) var(--space-6);
+  border: 0.125rem dashed color-mix(in srgb, var(--color-cream) 55%, transparent);
+  border-radius: var(--radius-card);
+  list-style: none;
+}
+
+.free-guide__bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-white);
+  font-weight: var(--weight-strong);
+}
+
+.free-guide__check {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: -0.1rem;
+  overflow: visible;
+}
+
+.free-guide__check-badge {
+  fill: var(--color-green);
+  stroke: var(--color-cream);
+}
+
+.free-guide__check-mark {
+  stroke: var(--color-white);
+}
+
+.free-guide__offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.free-guide__offer .price-tag {
+  border-color: var(--color-cream);
+  box-shadow: 0.1875rem 0.1875rem 0 var(--color-navy-deep);
+}
+
+.free-guide__meta {
+  font-weight: var(--weight-strong);
+  color: var(--color-beige);
+  letter-spacing: 0.04em;
+}
+
+.free-guide__cta {
+  margin-top: var(--space-2);
+  border-color: var(--color-cream);
+  box-shadow: 0.25rem 0.25rem 0 var(--color-navy-deep);
+}
+
+.free-guide__cta:hover {
+  box-shadow: 0.4375rem 0.4375rem 0 var(--color-navy-deep);
+}
+
+.free-guide__cta-arrow {
+  width: 1.25em;
+  height: 1.25em;
+  transition: transform var(--duration-base) var(--ease-spring);
+}
+
+.free-guide__cta:hover .free-guide__cta-arrow {
+  transform: translateX(0.3rem);
+}
+
+@media (max-width: 51.99rem) {
+  .free-guide__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 26rem) {
+  .free-guide__bullets {
+    padding: var(--space-4);
+  }
+
+  .free-guide__cta {
+    width: 100%;
+  }
+}
