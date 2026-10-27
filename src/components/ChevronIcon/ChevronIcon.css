@@ -1,0 +1,11 @@
+.chevron-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+.chevron-icon--left {
+  transform: scaleX(-1);
+}

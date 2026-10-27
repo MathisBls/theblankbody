@@ -1,0 +1,87 @@
+.price-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border: var(--outline);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-comic-small);
+  transform: rotate(-3deg);
+}
+
+.price-tag--free {
+  background: var(--color-green);
+  color: var(--color-ink);
+}
+
+.price-tag--paid {
+  background: var(--color-orange);
+  color: var(--color-ink);
+}
+
+.price-tag--coming-soon {
+  background: var(--color-cream);
+  color: var(--color-navy);
+}
+
+.book-offer {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.book-offer__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.book-offer__format {
+  font-weight: var(--weight-strong);
+  color: var(--color-navy);
+}
+
+.book-offer__cta {
+  justify-self: start;
+}
+
+.book-offer__trust {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+}
+
+.book-offer__trust li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.book-offer__trust li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--color-green);
+  border: 0.125rem solid var(--color-outline);
+}
+
+.book-offer__hint {
+  font-size: var(--text-sm);
+  color: var(--color-navy);
+}
+
+.book-offer--large .price-tag {
+  font-size: var(--text-base);
+  padding: 0.45rem 1.1rem;
+}
