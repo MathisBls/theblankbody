@@ -1,0 +1,38 @@
+{
+  "name": "blank-body-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "media": "node scripts/build-media.mjs",
+    "predev": "npm run media",
+    "dev": "vite",
+    "prebuild": "npm run media",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.3.0",
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "gsap": "^3.15.0",
+    "maath": "^0.10.8",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1",
+    "wouter": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.88.0",
+    "sharp": "^0.35.5",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4"
+  }
+}
