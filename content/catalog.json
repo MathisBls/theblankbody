@@ -1,0 +1,276 @@
+[
+  {
+    "slug": "the-7-night-sleep-reset",
+    "title": "The 7-Night Sleep Reset",
+    "subtitle": "One small change per day. Seven days. No supplements, no apps.",
+    "series": "Sleep",
+    "accent": "#2B3A67",
+    "status": "available",
+    "price": "Free",
+    "pages": 5,
+    "format": "PDF",
+    "url": "https://shop.beacons.ai/theblankbody/73035983-2b1d-47fb-a054-30e6154bacf0",
+    "blurb": "Most sleep advice asks you to change ten things at once. This reset adds one habit per day, backed by real studies, so by night 7 you're running all seven.",
+    "bullets": [
+      "A fixed wake-up time that resets your clock",
+      "10 minutes of morning light",
+      "The caffeine cut-off that actually works",
+      "A 20-minute wind-down routine"
+    ],
+    "images": {
+      "front": "books/the-7-night-sleep-reset/front.png",
+      "back": "books/the-7-night-sleep-reset/back.png",
+      "spine": "books/the-7-night-sleep-reset/spine.png",
+      "mockup": "books/the-7-night-sleep-reset/mockup.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    },
+    "file": "books/the-7-night-sleep-reset/guide.pdf"
+  },
+  {
+    "slug": "the-caffeine-clock",
+    "title": "The Caffeine Clock",
+    "subtitle": "Keep the energy, lose the 3 AM ceiling stare.",
+    "series": "Energy",
+    "accent": "#FF7A1A",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "Your 4 PM coffee is still in your body at 10 PM. Learn how caffeine really moves through you, and how to time it for energy without wrecking your sleep.",
+    "bullets": [
+      "Your personal caffeine cut-off",
+      "Hidden caffeine sources",
+      "Afternoon slump fixes without coffee",
+      "A 7-day caffeine reset plan"
+    ],
+    "images": {
+      "front": "books/the-caffeine-clock/front.png",
+      "back": "books/the-caffeine-clock/back.png",
+      "spine": "books/the-caffeine-clock/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "the-14-day-posture-fix",
+    "title": "The 14-Day Posture Fix",
+    "subtitle": "Five minutes a day for a back that hurts less.",
+    "series": "Posture",
+    "accent": "#2FA36B",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "Desk job, phone neck, stiff lower back? Fourteen short daily routines, illustrated step by step by Blank, to stand taller and move better.",
+    "bullets": [
+      "5-minute daily routines",
+      "Desk setup checklist",
+      "Neck and lower-back relief moves",
+      "Progress tracker"
+    ],
+    "images": {
+      "front": "books/the-14-day-posture-fix/front.png",
+      "back": "books/the-14-day-posture-fix/back.png",
+      "spine": "books/the-14-day-posture-fix/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "why-you-wake-up-at-3am",
+    "title": "Why You Wake Up at 3 AM",
+    "subtitle": "What your body is doing in the middle of the night, and how to sleep through it.",
+    "series": "Sleep",
+    "accent": "#2B3A67",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "Waking up at the same time every night isn't random. Understand your sleep cycles, stress and blood sugar, and get a simple plan to fall back asleep.",
+    "bullets": [
+      "How sleep cycles really work",
+      "The 90-second fall-back-asleep trick",
+      "Evening habits that cause 3 AM wake-ups",
+      "When to see a doctor"
+    ],
+    "images": {
+      "front": "books/why-you-wake-up-at-3am/front.png",
+      "back": "books/why-you-wake-up-at-3am/back.png",
+      "spine": "books/why-you-wake-up-at-3am/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "the-10-3-2-1-sleep-rule",
+    "title": "The 10-3-2-1 Sleep Rule",
+    "subtitle": "Four numbers that make tonight easier.",
+    "series": "Sleep",
+    "accent": "#2B3A67",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "10 hours before bed, no caffeine. 3 hours, no big meals. 2 hours, no work. 1 hour, no screens. A simple countdown that turns bedtime into a habit.",
+    "bullets": [
+      "The countdown explained, step by step",
+      "What to do instead at each step",
+      "A printable evening checklist",
+      "Tweaks for night owls and shift workers"
+    ],
+    "images": {
+      "front": "books/the-10-3-2-1-sleep-rule/front.png",
+      "back": "books/the-10-3-2-1-sleep-rule/back.png",
+      "spine": "books/the-10-3-2-1-sleep-rule/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "the-afternoon-slump-fix",
+    "title": "The Afternoon Slump Fix",
+    "subtitle": "Beat the 3 PM crash without another coffee.",
+    "series": "Energy",
+    "accent": "#FF7A1A",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "Your energy dips after lunch for real biological reasons. Learn what causes the crash and twelve small moves that bring your focus back in minutes.",
+    "bullets": [
+      "Why the 3 PM dip happens",
+      "Lunch choices that keep you sharp",
+      "10-minute reset routines",
+      "Light, water and movement hacks"
+    ],
+    "images": {
+      "front": "books/the-afternoon-slump-fix/front.png",
+      "back": "books/the-afternoon-slump-fix/back.png",
+      "spine": "books/the-afternoon-slump-fix/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "10000-steps-explained",
+    "title": "10,000 Steps, Explained",
+    "subtitle": "Where the number comes from, and how many you really need.",
+    "series": "Energy",
+    "accent": "#FF7A1A",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "10,000 steps started as a marketing slogan. Here is what the research actually says about daily steps, and an easy plan to add more without trying.",
+    "bullets": [
+      "The real story behind 10,000",
+      "What studies say about steps and health",
+      "Sneaky ways to add 2,000 steps",
+      "A 4-week walking plan"
+    ],
+    "images": {
+      "front": "books/10000-steps-explained/front.png",
+      "back": "books/10000-steps-explained/back.png",
+      "spine": "books/10000-steps-explained/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  },
+  {
+    "slug": "phone-neck-rescue",
+    "title": "Phone Neck Rescue",
+    "subtitle": "Undo hours of looking down in 5 minutes a day.",
+    "series": "Posture",
+    "accent": "#2FA36B",
+    "status": "coming-soon",
+    "price": "TBD",
+    "pages": null,
+    "format": "PDF",
+    "url": null,
+    "blurb": "Every inch your head drops forward adds load on your neck. Simple daily moves and phone habits, illustrated by Blank, to stand tall again.",
+    "bullets": [
+      "Why your neck hurts after scrolling",
+      "5 daily mobility moves",
+      "Phone and laptop height rules",
+      "A 7-day neck reset"
+    ],
+    "images": {
+      "front": "books/phone-neck-rescue/front.png",
+      "back": "books/phone-neck-rescue/back.png",
+      "spine": "books/phone-neck-rescue/spine.png"
+    },
+    "cover_size_px": {
+      "front": [
+        1600,
+        2400
+      ],
+      "spine": [
+        180,
+        2400
+      ]
+    }
+  }
+]
