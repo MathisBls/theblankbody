@@ -1,0 +1,410 @@
+.bookshelf {
+  position: relative;
+  padding-block: var(--space-24) var(--space-16);
+  overflow-x: clip;
+}
+
+.bookshelf__header {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  text-align: center;
+}
+
+.bookshelf__title {
+  font-size: var(--text-2xl);
+  max-width: 18ch;
+}
+
+.bookshelf__subtitle {
+  max-width: 34rem;
+  font-size: var(--text-lg);
+  color: var(--color-navy);
+}
+
+.bookshelf__header > * {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-spring);
+}
+
+.bookshelf__header > :nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.bookshelf__header > :nth-child(3) {
+  transition-delay: 160ms;
+}
+
+.bookshelf--revealed .bookshelf__header > * {
+  opacity: 1;
+  transform: none;
+}
+
+.bookshelf__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.bookshelf__count {
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+
+.bookshelf__body {
+  margin-top: var(--space-6);
+}
+
+.bookshelf__body--wide {
+  width: min(100% - 2 * var(--page-gutter), 90rem);
+  margin-inline: auto;
+}
+
+.bookshelf-empty {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  padding: var(--space-8);
+  border: 0.1875rem dashed var(--color-navy);
+  border-radius: var(--radius-card);
+  background: var(--color-cream);
+  font-weight: var(--weight-strong);
+  color: var(--color-navy);
+  text-align: center;
+}
+
+/* Filter chips */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.filter-chips__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.55rem 1.1rem;
+  border: var(--outline);
+  border-radius: var(--radius-pill);
+  background: var(--color-cream);
+  color: var(--color-navy);
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-comic-small);
+  transition:
+    transform var(--duration-fast) var(--ease-spring),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.filter-chips__chip:hover {
+  transform: translate(-0.125rem, -0.125rem) rotate(-2deg);
+  box-shadow: var(--shadow-comic);
+}
+
+.filter-chips__chip:active {
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0 0 0 var(--color-outline);
+}
+
+.filter-chips__chip--active {
+  background: var(--chip-fill);
+  color: var(--chip-ink);
+}
+
+.filter-chips__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding-inline: 0.3rem;
+  border: 0.125rem solid currentColor;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  letter-spacing: 0;
+}
+
+/* 3D stage */
+.shelf-stage {
+  --shelf-full-height: clamp(28rem, 74vh, 50rem);
+
+  position: relative;
+  height: calc(var(--shelf-full-height) * var(--shelf-visible-fraction, 1));
+  transition: height var(--duration-slow) var(--ease-out);
+  border: var(--outline);
+  border-radius: calc(var(--radius-card) * 1.5);
+  background:
+    radial-gradient(circle at 50% 35%, var(--color-cream) 0 30%, transparent 70%),
+    radial-gradient(var(--color-beige-dark) 0.09rem, transparent 0.1rem) 0 0 / 1.1rem 1.1rem,
+    var(--color-cream-warm);
+  box-shadow: var(--shadow-comic);
+  overflow: hidden;
+  touch-action: pan-y;
+  isolation: isolate;
+}
+
+/* The canvas keeps the full height; a shorter stage shows a centred band of it. */
+.shelf-stage__viewport {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: var(--shelf-full-height);
+  translate: 0 -50%;
+}
+
+.shelf-stage--pointer {
+  cursor: pointer;
+}
+
+.shelf-stage--focused {
+  cursor: grab;
+}
+
+.shelf-stage--focused:active {
+  cursor: grabbing;
+}
+
+.shelf-canvas canvas {
+  touch-action: pan-y;
+}
+
+.shelf-stage__loader {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  font-weight: var(--weight-strong);
+  color: var(--color-navy);
+}
+
+.shelf-stage__spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: var(--outline);
+  border-top-color: var(--color-orange);
+  border-radius: 50%;
+  animation: shelf-spin 0.9s linear infinite;
+}
+
+@keyframes shelf-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.shelf-stage__empty {
+  position: absolute;
+  inset: auto var(--space-6) 50% var(--space-6);
+  min-height: auto;
+  transform: translateY(50%);
+  z-index: 2;
+}
+
+.shelf-stage__triggers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shelf-stage__hint {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+  color: var(--color-navy);
+  text-align: center;
+}
+
+/* Stickers drawn over the 3D books (drei <Html>) and on fallback cards */
+.shelf-sticker {
+  opacity: 0;
+  transform: scale(0.4) rotate(-12deg);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.shelf-sticker--visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--duration-base) var(--ease-out) var(--sticker-delay, 0s),
+    transform var(--duration-slow) var(--ease-spring) var(--sticker-delay, 0s);
+}
+
+.shelf-sticker__badge {
+  display: inline-flex;
+  padding: 0.3rem 0.75rem;
+  border: var(--outline);
+  border-radius: var(--radius-pill);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-comic-small);
+  transform: rotate(4deg);
+}
+
+/* Fallback grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: var(--space-8) var(--space-6);
+  margin: 0;
+  padding: var(--space-6) 0;
+  list-style: none;
+}
+
+.book-grid__item {
+  opacity: 0;
+}
+
+.book-grid--revealed .book-grid__item {
+  animation: book-grid-enter var(--duration-slow) var(--ease-spring) both;
+  animation-delay: calc(var(--card-index, 0) * 70ms);
+}
+
+@keyframes book-grid-enter {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.book-grid__card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-4) var(--space-2);
+  border: 0;
+  border-radius: var(--radius-card);
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.book-grid__cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-2);
+}
+
+.book-grid__sticker {
+  position: absolute;
+  top: 0;
+  right: -0.75rem;
+  z-index: 1;
+  rotate: 8deg;
+}
+
+/* Small corner stickers: the cover already prints its own tag at the bottom. */
+.book-grid__sticker .price-tag,
+.book-grid__sticker .shelf-sticker__badge,
+.shelf-stage__sticker .price-tag,
+.shelf-stage__sticker .shelf-sticker__badge {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.625rem;
+  transform: none;
+}
+
+.book-grid__series {
+  font-size: 0.75rem;
+  font-weight: var(--weight-title);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+
+.book-grid__title {
+  font-family: var(--font-title);
+  font-weight: var(--weight-title);
+  color: var(--color-navy);
+  line-height: 1.15;
+}
+
+.book-grid--css3d .book-grid__card .css-book__body {
+  transform: rotateX(calc(4deg - var(--tilt-y, 0) * 8deg)) rotateY(calc(-18deg + var(--tilt-x, 0) * 16deg));
+}
+
+.book-grid--css3d .book-grid__card:hover .css-book__body,
+.book-grid--css3d .book-grid__card:focus-visible .css-book__body {
+  transform: translateY(-0.75rem) rotateX(calc(4deg - var(--tilt-y, 0) * 10deg))
+    rotateY(calc(-30deg + var(--tilt-x, 0) * 22deg));
+  filter: drop-shadow(0 0 1rem var(--color-orange));
+}
+
+.book-grid--static .book-grid__cover {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.book-grid--static .book-grid__card:hover .book-grid__cover,
+.book-grid--static .book-grid__card:focus-visible .book-grid__cover {
+  transform: translateY(-0.5rem);
+}
+
+@media (max-width: 47.9375rem) {
+  .bookshelf {
+    padding-block: var(--space-16) var(--space-12);
+  }
+
+  .shelf-stage {
+    --shelf-full-height: min(30rem, 64svh);
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6) var(--space-3);
+  }
+}
+
+.shelf-stage__stickers {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shelf-stage__sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  will-change: transform;
+}
+
+/* Anchored on the cover's top-right corner, mostly outside it, like a sticker slapped on the corner. */
+.shelf-stage__sticker .shelf-sticker {
+  translate: -40% -70%;
+  rotate: 8deg;
+}
